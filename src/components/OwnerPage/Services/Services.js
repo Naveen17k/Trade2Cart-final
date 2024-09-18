@@ -1,14 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import { motion } from 'framer-motion'; // Import framer-motion for animations
+import { motion } from 'framer-motion';
 import services from './Servicesproducts'; // Import the services data
+import { toast, ToastContainer } from 'react-toastify'; // Import toast and container
+import 'react-toastify/dist/ReactToastify.css'; // Import toast styles
+
+const categories = [
+  { name: 'Cab Services', emoji: '🚖' },
+  { name: 'AC Services', emoji: '❄️' },
+  { name: 'E-Services', emoji: '💻' },
+  { name: 'Decoration', emoji: '🎨' }
+];
 
 const Services = () => {
+  const [selectedCategory, setSelectedCategory] = useState('Cab Services');
+
+  // Function to filter services by category
+  const filterServicesByCategory = (category) =>
+    services.filter((service) => service.category === category);
+
+  // Handle category change
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
+  // Handle booking service
+  const handleBookService = (service) => {
+    try {
+      toast.success(`${service.name} booked!`, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2000,
+      });
+    } catch (error) {
+      console.error('Error showing toast:', error);
+      toast.success(`${service.name} booked!`, {
+        autoClose: 2000,
+      });
+    }
+  };
+
   return (
     <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
+      <ToastContainer />
       <h1 className="text-4xl font-extrabold text-center mb-10 text-green-900">Our Services</h1>
 
-      {/* Services Grid with animations */}
+      {/* Category Selector */}
+      <div className="flex flex-wrap justify-center mb-8 gap-4">
+        {categories.map(({ name, emoji }) => (
+          <motion.button
+            key={name}
+            className={`px-6 py-3 rounded-lg text-lg font-medium transition duration-300 ease-in-out ${
+              selectedCategory === name
+                ? 'bg-green-600 text-white shadow-md'
+                : 'bg-white text-green-800 border border-green-300'
+            } shadow-md hover:bg-green-500 hover:text-white`}
+            onClick={() => handleCategoryChange(name)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="mr-2">{emoji}</span>
+            {name}
+          </motion.button>
+        ))}
+      </div>
+
+      {/* Services Grid for Selected Category */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-8"
         initial="hidden"
@@ -23,11 +79,11 @@ const Services = () => {
           },
         }}
       >
-        {services.map((service) => (
+        {filterServicesByCategory(selectedCategory).map((service) => (
           <motion.div
             key={service.id}
-            className="bg-white border border-green-300 rounded-lg overflow-hidden shadow-md transition-transform duration-300 ease-in-out transform relative"
-            whileHover={{ scale: 1.05 }} // Hover animation
+            className="bg-white border border-green-300 rounded-lg overflow-hidden shadow-md transition-transform transform relative"
+            whileHover={{ scale: 1.05 }}
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
@@ -44,19 +100,19 @@ const Services = () => {
               <motion.button
                 className="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500 transition duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-green-500"
                 whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }} // Tap animation
+                whileTap={{ scale: 0.95 }}
+                onClick={() => handleBookService(service)}
               >
                 <FaShoppingCart className="mr-2" />
                 <a
-                  href={`https://wa.me/+919788335029?text=Hi, I would like to book the ${service.name} service.`}
-                  target="_blank" // Opens in a new tab
+                  href={`https://wa.me/+918903646525?text=Hi, I would like to book the ${service.name} service.`}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white"
                 >
                   Book Service
                 </a>
               </motion.button>
-
             </div>
           </motion.div>
         ))}

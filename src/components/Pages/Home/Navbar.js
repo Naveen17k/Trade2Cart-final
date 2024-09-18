@@ -32,7 +32,7 @@ const Navbar = () => {
         </li>
         <li className="hover:text-green-300 cursor-pointer flex items-center transition duration-300 ease-in-out transform hover:scale-110">
           <FaStore className="mr-2" />
-          <Link to="/trademite">TradeWaste</Link>
+          <Link to="/location">TradeWaste</Link>
         </li>
         <li className="hover:text-green-300 cursor-pointer flex items-center transition duration-300 ease-in-out transform hover:scale-110">
           <FaListAlt className="mr-2" />
@@ -77,7 +77,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="text-black text-center py-2 hover:bg-green-100 cursor-pointer">
-          <Link to="/trademite" onClick={() => setMenuOpen(false)}>
+          <Link to="/location" onClick={() => setMenuOpen(false)}>
             <FaStore className="mx-auto mb-1" />
             TradeWaste
           </Link>

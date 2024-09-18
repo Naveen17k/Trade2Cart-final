@@ -17,6 +17,8 @@ import Grocery from './components/OwnerPage/Products/Grocery';
 import TradeMite from './components/OwnerPage/TradeMite/TradeMite';
 import About from './components/Pages/Home/About';
 import ContactUs from './components/Pages/Home/contactus';
+import Locations from './components/OwnerPage/Locations';
+import OwnerPage from './components/OwnerPage/ownerPage';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -41,8 +43,10 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/services" element={<Services />} />
           <Route path="/category" element={<Category />} />
-          <Route path="/trademite" element={<TradeMite />} />
+          <Route path="/location" element={<Locations />} />
+          <Route path="/trade-waste/:location" element={<TradeMite />} />
           <Route path="/about" element={<About />} />
+          <Route path="/owner" element={<OwnerPage />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/cart" element={<Cart />} />
           <Route path='/furniture' element={<Furniture/>}/>

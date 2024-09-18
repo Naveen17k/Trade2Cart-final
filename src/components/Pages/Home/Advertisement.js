@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBullhorn } from 'react-icons/fa';
+import { FaBullhorn} from 'react-icons/fa';
 import ReactPlayer from 'react-player';  // Import ReactPlayer
 import rightImage from '../../../assets/adversite/left.jpg';  // Import right image
+import { Link } from 'react-router-dom';
 
 const Advertisement = () => {
   const container = {
@@ -31,15 +32,20 @@ const Advertisement = () => {
           className="space-y-6"
         >
           <motion.div variants={item}>
+         
+            
             <FaBullhorn className="text-6xl text-green-600 mx-auto mb-4" />
+            <motion.button
+        whileHover={{ scale: 1.1, rotate: 2 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-green-600 text-white font-bold px-6 py-4 rounded-md shadow-md hover:bg-green-700 transition-transform duration-300"
+      >
+        Trade Waste!
+      </motion.button>
+
           </motion.div>
 
-          <motion.h2
-            variants={item}
-            className="text-4xl font-bold text-gray-800"
-          >
-            Advertise with Us!
-          </motion.h2>
+        
 
           <motion.p variants={item} className="text-lg text-gray-600">
             Reach a wider audience with our premium advertising options. Contact us to get started!
@@ -59,13 +65,15 @@ const Advertisement = () => {
               transition={{ type: 'spring', stiffness: 50, damping: 10 }}
               whileHover={{ scale: 1.1, rotate: [0, 5, -5, 0], transition: { yoyo: Infinity } }} // Continuous hover animation
             />
-            <motion.button
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-green-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-green-700 transition-transform duration-300"
-            >
-              Learn More
-            </motion.button>
+            <Link to="/owner">
+  <motion.button
+    whileHover={{ scale: 1.1, rotate: 2 }}
+    whileTap={{ scale: 0.95 }}
+    className="bg-green-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-green-700 transition-transform duration-300"
+  >
+    Click me!
+  </motion.button>
+</Link>
 
             {/* Right Image with Larger Size and Animation */}
           </motion.div>

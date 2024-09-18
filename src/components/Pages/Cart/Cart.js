@@ -35,7 +35,7 @@ const CartPage = () => {
   };
 
   const handleWhatsAppShare = () => {
-    const phoneNumber = '+919788335029'; // Use your desired phone number here
+    const phoneNumber = '+918903646525'; // Use your desired phone number here
     const message = formatWhatsAppMessage();
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, '_blank');
