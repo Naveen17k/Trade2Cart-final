@@ -9,6 +9,7 @@ import  Ranipet from '../../assets/adversite/ranipet.jpeg';
 import thiruvanamalai from '../../assets/adversite/thiruvanamalai.jpeg';
 
 const locations = [
+  
   { name: 'Vellore', image: vellore },
   { name: 'Chennai', image: chennai },
   { name: 'Ranipet', image: Ranipet },
