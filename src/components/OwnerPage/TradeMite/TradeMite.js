@@ -13,7 +13,7 @@ const TradeMite = () => {
   const handleAddToCart = (product) => {
     addToCart(product);
     toast.success(`${product.name} has been added to your cart!`, {
-      position: window.innerWidth > 768 ? 'bottom-left' : 'top-center',
+      position: window.innerWidth > 768 ? 'top-right' : 'top-right',
       autoClose: 2000,
       className: 'text-sm md:text-base',
       bodyClassName: 'text-gray-800',
@@ -46,7 +46,7 @@ const TradeMite = () => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-4xl font-extrabold text-center mb-10 text-green-900">
-          Trade Mite Products
+          Trade Waste Products
         </h2>
 
         <div className="flex flex-wrap justify-center mb-8 gap-6">

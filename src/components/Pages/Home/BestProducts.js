@@ -4,7 +4,7 @@ import { useCart } from '../Cart/CartContext'; // Adjust the path based on the a
 import { motion } from 'framer-motion'; // Importing framer-motion
 
 const allProducts = [
-  { id: 1, name: "Bangle1", price: "$99", URL: "https://wallpaperaccess.com/full/685283.jpg", category: "Fancy" },
+  { id: 1, name: "Bangle1", price: "₹99", URL: "https://wallpaperaccess.com/full/685283.jpg", category: "Fancy" },
   { id: 2, name: 'Grocery', price: '₹149', URL: "https://th.bing.com/th/id/OIP.kKdPK_-Q40JpG69jnXu7MwHaHa?rs=1&pid=ImgDetMain", category: 'Grocery' },
   { id: 3, name: 'Kairunbee', price: '₹199', URL: "https://5.imimg.com/data5/SELLER/Default/2020/11/HU/VB/EY/6028591/blue-havells-ceiling-fan.jpg", category: 'Kairunbee Store' },
   { id: 4, name: 'Trade', price: '₹89', URL: "https://th.bing.com/th/id/OIP.FbcWv0KaBUXsgIEBeNr_5wHaEK?rs=1&pid=ImgDetMain", category: 'Trade' },

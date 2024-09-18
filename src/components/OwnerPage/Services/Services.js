@@ -5,8 +5,8 @@ import services from './Servicesproducts'; // Import the services data
 
 const Services = () => {
   return (
-    <div className="container mx-auto px-4 py-8 bg-white min-h-screen">
-      <h1 className="text-4xl font-bold text-center text-green-600 mb-8">Our Services</h1>
+    <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
+      <h1 className="text-4xl font-extrabold text-center mb-10 text-green-900">Our Services</h1>
 
       {/* Services Grid with animations */}
       <motion.div
