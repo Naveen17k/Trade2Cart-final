@@ -93,7 +93,7 @@ const Advertisement = () => {
           >
             <h3 className="text-2xl font-bold text-green-600 mb-4">Promotion Video</h3>
             <ReactPlayer 
-              url="https://www.youtube.com/watch?v=ysz5S6PUM-U"  // Replace with promotion video URL
+              url="https://www.youtube.com/shorts/CwBsJpK6Ee8"  // Replace with promotion video URL
               width="100%"
               height="200px"
               controls={true}
@@ -107,7 +107,7 @@ const Advertisement = () => {
           >
             <h3 className="text-2xl font-bold text-green-600 mb-4">Application Use Video</h3>
             <ReactPlayer 
-              url="https://www.youtube.com/watch?v=GRWmm6AWAUQ"  // Replace with application use video URL
+              url="https://www.youtube.com/shorts/CwBsJpK6Ee8"  // Replace with application use video URL
               width="100%"
               height="200px"
               controls={true}
@@ -121,7 +121,7 @@ const Advertisement = () => {
           >
             <h3 className="text-2xl font-bold text-green-600 mb-4">Feedback Video</h3>
             <ReactPlayer 
-              url="https://www.youtube.com/shorts/CwBsJpK6Ee8"  // Replace with feedback video URL
+              url="https://www.youtube.com/watch?v=GRWmm6AWAUQ"  // Replace with feedback video URL
               width="100%"
               height="200px"
               controls={true}
