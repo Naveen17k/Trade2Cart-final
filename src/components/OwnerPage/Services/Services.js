@@ -48,7 +48,7 @@ const Services = () => {
               >
                 <FaShoppingCart className="mr-2" />
                 <a
-                  href={`https://wa.me/918098096110?text=Hi, I would like to book the ${service.name} service.`}
+                  href={`https://wa.me/+919788335029?text=Hi, I would like to book the ${service.name} service.`}
                   target="_blank" // Opens in a new tab
                   rel="noopener noreferrer"
                   className="text-white"
