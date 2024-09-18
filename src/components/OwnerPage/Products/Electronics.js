@@ -31,9 +31,7 @@ const Electronics = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-extrabold text-center mb-10 text-green-900">
-          Electronic Products
-        </h2>
+       
 
         {/* Product Grid */}
         <motion.div 

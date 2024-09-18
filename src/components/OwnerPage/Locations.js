@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Importing images
-import vellore from '../../assets/adversite/chennai.jpeg';
-import chennai from '../../assets/adversite/vellore.jpeg';
+import chennai from '../../assets/adversite/chennai.jpeg';
+import vellore from '../../assets/adversite/vellore.jpeg';
 import  Ranipet from '../../assets/adversite/ranipet.jpeg';
 import thiruvanamalai from '../../assets/adversite/thiruvanamalai.jpeg';
 
 const locations = [
-  
+
   { name: 'Vellore', image: vellore },
   { name: 'Chennai', image: chennai },
   { name: 'Ranipet', image: Ranipet },

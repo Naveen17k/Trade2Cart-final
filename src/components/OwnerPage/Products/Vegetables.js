@@ -27,7 +27,7 @@ const Vegetables = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <ToastContainer /> {/* Add ToastContainer to render the toast */}
-      <h1 className="text-4xl font-extrabold text-center mb-10 text-green-900">Vegetables</h1>
+     
 
       <motion.div 
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"

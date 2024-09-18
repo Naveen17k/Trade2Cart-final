@@ -18,11 +18,10 @@ const Navbar = () => {
     <div className="container mx-auto flex justify-between items-center">
       {/* Logo and Brand */}
       <div className="flex items-center">
-        <img src='/Trade2Cart.png' alt="Trade2Cart" className="w-10 h-10 animate-pulse" />
-        <span className="text-green-400 text-2xl font-bold ml-3">
-          Trade<span className='text-yellow-200 text-xl'>2</span>Cart
-        </span>
-      </div>
+  <Link to="/">
+    <img src='/Trade2Cart.png' alt="Trade2Cart" className="w-10 h-10 animate-pulse" />
+  </Link>
+  </div>
   
       {/* Links for desktop */}
       <ul className="hidden md:flex font-serif space-x-8 text-black items-center">

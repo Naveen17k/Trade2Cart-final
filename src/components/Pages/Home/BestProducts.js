@@ -1,29 +1,20 @@
 import React, { useState } from 'react';
-import { FaStar, FaShoppingCart, FaTh, FaStore, FaAppleAlt, FaBeer, FaCartPlus } from 'react-icons/fa';
-import { useCart } from '../Cart/CartContext'; // Adjust the path based on the actual location
-import { motion } from 'framer-motion'; // Importing framer-motion
+import { FaStar, FaTh, FaBeer } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const allProducts = [
-  { id: 1, name: "Bangle1", price: "₹99", URL: "https://wallpaperaccess.com/full/685283.jpg", category: "Fancy" },
-  { id: 2, name: 'Grocery', price: '₹149', URL: "https://th.bing.com/th/id/OIP.kKdPK_-Q40JpG69jnXu7MwHaHa?rs=1&pid=ImgDetMain", category: 'Grocery' },
-  { id: 3, name: 'Kairunbee', price: '₹199', URL: "https://5.imimg.com/data5/SELLER/Default/2020/11/HU/VB/EY/6028591/blue-havells-ceiling-fan.jpg", category: 'Kairunbee Store' },
-  { id: 4, name: 'Trade', price: '₹89', URL: "https://th.bing.com/th/id/OIP.FbcWv0KaBUXsgIEBeNr_5wHaEK?rs=1&pid=ImgDetMain", category: 'Trade' },
-  { id: 5, name: 'KGN', price: '₹120', URL: "https://i5.walmartimages.com/asr/47fbd94a-fe5c-4bc2-a737-88c75f856a06.46ff725a7842c36756df156b057c6d46.jpeg", category: 'KGN' },
-  { id: 6, name: 'Service', price: '₹130', URL: "https://5.imimg.com/data5/SELLER/Default/2021/3/VN/DW/HW/47610632/stage-flower-decoration-services-1000x1000.jpg", category: 'Services' },
+  { id: 5, name: 'KGN', price: '₹120', URL: "https://i5.walmartimages.com/asr/47fbd94a-fe5c-4bc2-a737-88c75f856a06.46ff725a7842c36756df156b057c6d46.jpeg", category: 'KGN', link: '/furniture' },
+  { id: 6, name: 'Service', price: '₹130', URL: "https://5.imimg.com/data5/SELLER/Default/2021/3/VN/DW/HW/47610632/stage-flower-decoration-services-1000x1000.jpg", category: 'Services', link: '/services' },
 ];
 
 const categories = [
-  { name: 'All', icon: <FaStar /> },
-  { name: 'Fancy', icon: <FaShoppingCart /> },
-  { name: 'Grocery', icon: <FaAppleAlt /> },
-  { name: 'Kairunbee Store', icon: <FaStore /> },
-  { name: 'Services', icon: <FaBeer /> },
-  { name: 'KGN', icon: <FaTh /> },
-  { name: 'Trade', icon: <FaAppleAlt /> },
+  { name: 'All', icon: <FaStar />  },
+  { name: 'Services', link: '/services', icon: <FaBeer /> },
+  { name: 'KGN', link: '/furniture', icon: <FaTh /> }, // Corrected link here
 ];
 
 const BestProducts = () => {
-  const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [showAll, setShowAll] = useState(false);
 
@@ -59,8 +50,8 @@ const BestProducts = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <span className="mr-3 text-2xl">{category.icon}</span>
-              {category.name}
+              {category.icon}
+              <span className="ml-2">{category.name}</span>
             </motion.button>
           ))}
         </div>
@@ -90,24 +81,19 @@ const BestProducts = () => {
                 visible: { opacity: 1, y: 0 },
               }}
             >
-              <img
-                src={product.URL}
-                alt={product.name}
-                className="w-full h-48 sm:h-64 md:h-72 lg:h-60 object-cover"
-              />
+              <Link to={product.link}>
+                <img
+                  src={product.URL}
+                  alt={product.name}
+                  className="w-full h-48 sm:h-64 md:h-72 lg:h-60 object-cover cursor-pointer"
+                />
+              </Link>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-green-800 mb-2">{product.name}</h3>
                 <div className="flex items-center justify-between">
                   <p className="bg-green-100 text-green-600 p-2 rounded inline-block">
                     {product.price}
                   </p>
-                  <motion.button
-                    onClick={() => addToCart(product)}
-                    className="text-green-600 text-xl"
-                    whileHover={{ scale: 1.3, rotate: 360 }}
-                  >
-                    <FaCartPlus />
-                  </motion.button>
                 </div>
               </div>
             </motion.div>

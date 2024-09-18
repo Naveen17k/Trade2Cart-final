@@ -38,9 +38,7 @@ const Furniture = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-extrabold text-center mb-10 text-green-900">
-          Furniture Products
-        </h2>
+        
 
         {/* Category Selector */}
         <div className="flex flex-wrap justify-center mb-8 gap-4">
