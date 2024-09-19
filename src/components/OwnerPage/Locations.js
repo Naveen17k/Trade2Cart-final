@@ -5,15 +5,14 @@ import { motion } from 'framer-motion';
 // Importing images
 import chennai from '../../assets/adversite/chennai.jpeg';
 import vellore from '../../assets/adversite/vellore.jpeg';
-import  Ranipet from '../../assets/adversite/ranipet.jpeg';
-import thiruvanamalai from '../../assets/adversite/thiruvanamalai.jpeg';
+import Ranipet from '../../assets/adversite/ranipet.jpeg';
+import kanchipuram from '../../assets/adversite/thiruvanamalai.jpeg';
 
 const locations = [
-
   { name: 'Vellore', image: vellore },
   { name: 'Chennai', image: chennai },
   { name: 'Ranipet', image: Ranipet },
-  { name: 'Thiruvanamalai', image: thiruvanamalai}
+  { name: 'Kanchipuram', image: kanchipuram },
   // Add more locations if necessary
 ];
 
@@ -40,7 +39,7 @@ const Locations = () => {
               <div className="relative">
                 <motion.img
                   src={location.image}
-                  alt={location.name}
+                  alt={`Image of ${location.name}`}
                   className="w-full h-48 md:h-52 lg:h-60 object-cover rounded-t-xl"
                   whileHover={{ scale: 1.05 }} // Image scaling on hover
                   transition={{ duration: 0.4 }}
@@ -54,6 +53,7 @@ const Locations = () => {
                 <Link
                   to={`/trade-waste/${location.name.toLowerCase()}`}
                   className="bg-green-500 text-white px-4 py-2 md:px-6 md:py-3 rounded-full hover:bg-green-600 transition duration-200 inline-block"
+                  aria-label={`Explore products in ${location.name}`}
                 >
                   Explore Products
                 </Link>

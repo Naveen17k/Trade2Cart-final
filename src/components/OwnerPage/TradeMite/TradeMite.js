@@ -99,6 +99,10 @@ const TradeMite = () => {
                   <h3 className="text-lg font-semibold text-green-800 mb-2">
                     {product.name}
                   </h3>
+                  
+                  <h3 className="text-lg font-semibold text-green-800 mb-2">
+                    {product.unit}
+                  </h3>
                   <div className="flex items-center justify-between">
                     <p className="bg-green-100 text-green-600 p-2 rounded inline-block">
                       {product.price}

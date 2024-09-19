@@ -42,8 +42,6 @@ const Services = () => {
   return (
     <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
       <ToastContainer />
-      <h1 className="text-4xl font-extrabold text-center mb-10 text-green-900">Our Services</h1>
-
       {/* Category Selector */}
       <div className="flex flex-wrap justify-center mb-8 gap-4">
         {categories.map(({ name, emoji }) => (

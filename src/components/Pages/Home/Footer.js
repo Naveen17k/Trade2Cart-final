@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaPinterestP } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -16,9 +17,9 @@ const Footer = () => {
           <div className="flex-1 md:w-1/3">
             <h4 className="text-xl font-semibold mb-3">Customer Service</h4>
             <ul className="space-y-2">
-              <li><a href="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</a></li>
-              <li><a href="/location" className="text-gray-600 hover:text-gray-900">Returns & Exchanges</a></li>
-              <li><a href="/faq" className="text-gray-600 hover:text-gray-900">FAQ</a></li>
+              <li><Link to="/contact" className="text-gray-600 hover:text-gray-900">Contact Us</Link></li>
+              <li><Link to="/location" className="text-gray-600 hover:text-gray-900">Returns & Exchanges</Link></li>
+              <li><Link to="/faq" className="text-gray-600 hover:text-gray-900">FAQ</Link></li>
             </ul>
           </div>
           
@@ -68,12 +69,12 @@ const Footer = () => {
         
         {/* Back to Top Link */}
         <div className="mt-6 text-center">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="text-white font-semibold hover:text-gray-300"
           >
             Back to Home
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

@@ -47,7 +47,6 @@ function App() {
           <Route path="/trade-waste/:location" element={<TradeMite />} />
           <Route path="/about" element={<About />} />
           <Route path="/owner" element={<OwnerPage />} />
-          <Route path="/contact" element={<ContactUs />} />
           <Route path="/cart" element={<Cart />} />
           <Route path='/furniture' element={<Furniture/>}/>
           <Route path='/electronics' element={<Electronics/>}/>
@@ -55,6 +54,7 @@ function App() {
           <Route path='/vegetables-foods' element={<Vegetables/>}/>
           <Route path='/grocery' element={<Grocery/>}/>
           <Route path="*" element={<NotFound />} /> {/* 404 Route */}
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
         <Footer />
       </Router>
